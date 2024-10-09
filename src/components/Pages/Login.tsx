@@ -1,9 +1,10 @@
-import { bg } from "../../assets";
+import { bg, logo } from "../../assets";
 import z from "zod";
 import { FieldValues, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import useDocumentTitle from "../../hooks/useDocumentTitle";
 
 const schema = z.object({
   password: z.string().min(6, {
@@ -15,6 +16,9 @@ const schema = z.object({
 type FormData = z.infer<typeof schema>;
 
 const Login = () => {
+  const [title] = useState("Sign Up | KeyFundMe");
+  useDocumentTitle(title);
+
   const [passwordType, setPasswordType] = useState(true);
 
   const {
@@ -38,15 +42,17 @@ const Login = () => {
     >
       <div className="flex items-center justify-center h-full lg:px-0 px-2">
         <div className="lg:w-[29%] lg:h-[80dvh] bg-white rounded-2xl p-8">
-          {/* <div className="flex justify-center">
-            <img src={logo} alt="Logo" className="w-20" />
-          </div> */}
+          <div className="flex justify-center">
+            <Link to="/">
+              <img src={logo} alt="Logo" className="w-32" />
+            </Link>
+          </div>
           <p className="text-xl mt-10">Sign In</p>
 
           <form onSubmit={handleSubmit(onSubmit)} className="mt-10">
             {/* Email */}
             <div className="">
-              <label htmlFor="email" className="block text-sm">
+              <label htmlFor="email" className="block text-sm text-gray-600">
                 Email
               </label>
               <input
@@ -63,23 +69,23 @@ const Login = () => {
             </div>
 
             {/* Password */}
-            <label htmlFor="email" className="block text-sm mt-5">
+            <label htmlFor="email" className="block text-sm mt-3 text-gray-600">
               Password
             </label>
-            <div className="grid grid-cols-12 h-12 border border-gray-400 rounded-lg mt-2">
+            <div className="grid grid-cols-12 border border-gray-400 rounded-lg mt-2">
               <div className="col-span-11">
                 <input
                   {...register("password")}
                   type={!passwordType ? "text" : "password"}
                   name="password"
-                  className="ps-4 w-full mt-2 focus:outline-none"
+                  className="ps-4 w-full focus:outline-none h-12"
                 />
               </div>
               <p
                 onClick={() => setPasswordType(!passwordType)}
                 className={` ${
                   passwordType ? "bi-eye-fill" : "bi-eye-slash-fill"
-                } text-xl pe-3 pt-2 cursor-pointer`}
+                } text-xl pe-3 pt-3 cursor-pointer`}
               ></p>
             </div>
             {errors.password && (

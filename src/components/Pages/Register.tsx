@@ -4,6 +4,8 @@ import { FieldValues, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { logo } from "../../assets";
+import useDocumentTitle from "../../hooks/useDocumentTitle";
 
 const schema = z.object({
   password: z
@@ -34,6 +36,9 @@ const schema = z.object({
 type FormData = z.infer<typeof schema>;
 
 const Register = () => {
+  const [title] = useState("Sign In | KeyFundMe");
+  useDocumentTitle(title);
+
   const [passwordType, setPasswordType] = useState(true);
 
   const {
@@ -57,15 +62,17 @@ const Register = () => {
     >
       <div className="flex items-center justify-center h-full lg:px-0 px-2">
         <div className="lg:w-[29%] lg:h-[95dvh] bg-white rounded-2xl p-8">
-          {/* <div className="flex justify-center">
-            <img src={logo} alt="Logo" className="w-20" />
-          </div> */}
-          <p className="text-xl mt-10">Create an account</p>
+          <div className="flex justify-center">
+            <Link to="/">
+              <img src={logo} alt="Logo" className="w-32" />
+            </Link>
+          </div>
+          <p className="text-xl mt-5">Create an account</p>
 
           <form onSubmit={handleSubmit(onSubmit)} className="mt-7">
             {/* First Name */}
             <div className="mb-3">
-              <label htmlFor="fName" className="block text-sm">
+              <label htmlFor="fName" className="block text-sm text-gray-600">
                 First Name
               </label>
               <input
@@ -83,7 +90,7 @@ const Register = () => {
 
             {/* Last Name */}
             <div className="mb-3">
-              <label htmlFor="lName" className="block text-sm">
+              <label htmlFor="lName" className="block text-sm text-gray-600">
                 Last Name
               </label>
               <input
@@ -101,7 +108,7 @@ const Register = () => {
 
             {/* Email */}
             <div className="mb-3">
-              <label htmlFor="email" className="block text-sm">
+              <label htmlFor="email" className="block text-sm text-gray-600">
                 Email
               </label>
               <input
@@ -118,7 +125,7 @@ const Register = () => {
             </div>
 
             {/* Password */}
-            <label htmlFor="email" className="block text-sm">
+            <label htmlFor="email" className="block text-sm text-gray-600">
               Password
             </label>
             <div className="grid grid-cols-12 border border-gray-400 rounded-lg mt-2">
