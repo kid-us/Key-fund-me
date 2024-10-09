@@ -109,7 +109,7 @@ const Login = () => {
             </p>
             <p className="mt-5 text-sm font-poppins">
               Don't have an Account?{" "}
-              <Link to="/register" className="underline font-poppins">
+              <Link to="/sign-up" className="underline font-poppins">
                 Register
               </Link>
             </p>
