@@ -3,6 +3,7 @@ import "./App.css";
 import Home from "./components/Pages/Home";
 import Login from "./components/Pages/Login";
 import Register from "./components/Pages/Register";
+import "animate.css";
 
 function App() {
   return (
