@@ -5,7 +5,7 @@ import { useState } from "react";
 import Menu from "./Menu";
 
 interface Props {
-  bg: boolean;
+  bg?: boolean;
 }
 
 const Navbar = ({ bg }: Props) => {
@@ -28,7 +28,7 @@ const Navbar = ({ bg }: Props) => {
     <div
       className={`${
         bg && "bg-white"
-      } sticky top-0 container mx-auto lg:px-5 rounded-b-xl lg:pb-4 pt-1 py-1 lg:pb-0 pb-3`}
+      } sticky top-0 container mx-auto lg:px-5 rounded-b-xl lg:pb-4 pt-1 py-1 pb-3`}
     >
       <div className="flex justify-between lg:p-0 px-5 py-1">
         <div className="">

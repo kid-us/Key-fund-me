@@ -4,8 +4,10 @@ import Wrapper from "./Wrapper";
 import z from "zod";
 import { FieldValues, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useDocumentTitle from "../../hooks/useDocumentTitle";
+import { useFundStore } from "../../store/useCreateFund";
+import Loader from "../Loader/Loader";
 
 const schema = z.object({
   fName: z
@@ -18,7 +20,7 @@ const schema = z.object({
   phone: z.string().min(10, { message: "Phone number is required." }),
   password: z
     .string()
-    .min(12, { message: "Password must be at least 6 characters long." })
+    .min(6, { message: "Password must be at least 6 characters long." })
     .regex(/[A-Z]/, {
       message: "Password must contain at least one uppercase letter.",
     })
@@ -37,16 +39,38 @@ const Fundraiser = () => {
   const [title] = useState("Register");
   useDocumentTitle(title);
 
+  //   Fund Store
+
+  const [loader, setLoader] = useState<boolean>(false);
   const [passwordType, setPasswordType] = useState(true);
 
+  const { fundraise, addToFund } = useFundStore();
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors },
   } = useForm<FormData>({ resolver: zodResolver(schema) });
 
+  // Set form values using react-hook-form's setValue
+  useEffect(() => {
+    setValue("fName", fundraise?.first_name || "");
+    setValue("lName", fundraise?.last_name || "");
+    setValue("phone", fundraise?.phone_number || "");
+    setValue("password", fundraise?.password || "");
+  }, [setValue, fundraise]);
+
+  // On Continue
   const onSubmit = (data: FieldValues) => {
-    console.log(data);
+    setLoader(true);
+
+    // Store to storage
+    addToFund({
+      first_name: data.fName,
+      last_name: data.lName,
+      phone_number: data.phone,
+      password: data.password,
+    });
   };
 
   return (
@@ -148,9 +172,13 @@ const Fundraiser = () => {
             )}
 
             <div className="flex justify-end mt-14">
-              <button className="btn-bg w-60 rounded-lg text-white py-3 shadow shadow-zinc-900">
-                Sign in
-              </button>
+              {loader ? (
+                <Loader />
+              ) : (
+                <button className="btn-bg w-60 rounded-lg text-white py-3 shadow shadow-zinc-900">
+                  Continue
+                </button>
+              )}
             </div>
           </form>
         </div>

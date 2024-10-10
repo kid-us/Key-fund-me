@@ -18,7 +18,7 @@ const Sidebar = ({ description, title, image }: Props) => {
 
       <div className="col-span-3 lg:ps-10 p-5">
         <Link to="/" className="lg:block hidden">
-          <img src={logo} alt="Logo" className="absolute top-20 w-20" />
+          <img src={logo} alt="Logo" className="absolute top-20 w-24" />
         </Link>
         <div className="flex items-center h-full">
           <div>
