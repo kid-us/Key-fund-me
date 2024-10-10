@@ -46,7 +46,7 @@ const Navbar = () => {
             Sign In
           </Link>
           <Link
-            to={"/"}
+            to={"/create/fundraiser"}
             className="btn-bg text-white text-sm shadow shadow-zinc-900 py-2 px-5 rounded-lg"
           >
             Start a KeyFundMe
