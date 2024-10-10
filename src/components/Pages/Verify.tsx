@@ -6,7 +6,7 @@ import React, {
   KeyboardEvent,
   useEffect,
 } from "react";
-import { bg, logo } from "../../assets";
+import { hero, logo } from "../../assets";
 // import axios from "axios";
 // import { baseUrl } from "../../services/apiClient";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -88,7 +88,7 @@ const Verify: React.FC = () => {
   return (
     <div
       style={{
-        backgroundImage: `url(${bg})`,
+        backgroundImage: `url(${hero})`,
         backgroundPosition: "center",
         backgroundSize: "cover",
         height: "100vh",

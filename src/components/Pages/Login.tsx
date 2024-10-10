@@ -1,4 +1,4 @@
-import { bg, logo } from "../../assets";
+import { hero, logo } from "../../assets";
 import z from "zod";
 import { FieldValues, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -33,7 +33,7 @@ const Login = () => {
   return (
     <div
       style={{
-        backgroundImage: `url(${bg})`,
+        backgroundImage: `url(${hero})`,
         backgroundPosition: "center",
         backgroundSize: "cover",
         height: "100vh",
