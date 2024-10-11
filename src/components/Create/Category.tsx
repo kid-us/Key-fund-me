@@ -4,27 +4,26 @@ import Sidebar from "./Sidebar";
 import Wrapper from "./Wrapper";
 import categories from "../../services/categories";
 import ContinueButton from "../Button/ContinueButton";
-import { useNavigate } from "react-router-dom";
 import BackButton from "../Button/BackButton";
+import Alert from "../Alert/Alert";
 
 const Category = () => {
   const { fundraise, addToFund } = useFundStore();
 
-  const navigate = useNavigate();
-
   const [category, setCategory] = useState<string>("");
   const [loader, setLoader] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
+  const [alert, setAlert] = useState<boolean>(false);
 
   //  Check if the previous form is filled
   useEffect(() => {
     if (
-      fundraise.first_name === "" ||
-      fundraise.last_name === "" ||
-      fundraise.phone_number === "" ||
-      fundraise.password === ""
+      fundraise.first_name === undefined ||
+      fundraise.last_name === undefined ||
+      fundraise.phone_number === undefined ||
+      fundraise.password === undefined
     ) {
-      navigate("/create/register");
+      setAlert(true);
     }
   }, [fundraise]);
 
@@ -53,6 +52,9 @@ const Category = () => {
 
   return (
     <>
+      {/* Alert */}
+      {alert && <Alert link="/create/register" start={3} />}
+
       {/* Sidebar */}
       <Sidebar
         image="category"
@@ -88,7 +90,6 @@ const Category = () => {
           {/* Error Message */}
           {error && (
             <p className="text-xs text-red-600 mt-2">
-              {" "}
               <span className="bi-exclamation-triangle-fill"></span> Please
               choose category
             </p>
