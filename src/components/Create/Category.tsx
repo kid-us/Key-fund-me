@@ -51,7 +51,7 @@ const Category = () => {
   return (
     <>
       {/* Alert */}
-      {alert && <Alert link="/create/register" start={3} />}
+      {alert && <Alert link="/register" start={3} />}
 
       {/* Sidebar */}
       <Sidebar

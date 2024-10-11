@@ -10,12 +10,19 @@ const useIncompleteFieldsAlert = (from: string) => {
     if (from === "category") {
       if (
         fundraise.first_name === undefined ||
+        fundraise.first_name === "" ||
         fundraise.last_name === undefined ||
+        fundraise.last_name === "" ||
         fundraise.phone_number === undefined ||
-        fundraise.password === undefined
+        fundraise.phone_number === "" ||
+        fundraise.password === undefined ||
+        fundraise.password === ""
       ) {
         setAlert(true);
       }
+    } else if (from === "info") {
+      if (fundraise.category === undefined || fundraise.category === "")
+        setAlert(true);
     }
   }, [from]);
 

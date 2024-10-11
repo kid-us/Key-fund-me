@@ -73,7 +73,7 @@ const Info = () => {
   return (
     <>
       {/* Alert */}
-      {alert && <Alert link="/create/register" start={3} />}
+      {alert && <Alert link="/category" start={3} />}
 
       {/* Sidebar */}
       <Sidebar
@@ -88,7 +88,7 @@ const Info = () => {
       {/* Fundraiser */}
       <Wrapper>
         <div className="w-full">
-          <p className="text-xl mb-6">Please Choose category</p>
+          <p className="text-xl mb-6">Fundraising information</p>
           <form onSubmit={handleSubmit(onSubmit)} className="mt-4">
             {/* Title */}
             <div className="mb-4">

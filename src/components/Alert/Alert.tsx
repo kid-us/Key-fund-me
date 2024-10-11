@@ -18,7 +18,7 @@ const Alert = ({ start, link }: Props) => {
 
       return () => clearInterval(timer);
     } else {
-      navigate(link);
+      navigate(`/create${link}`);
     }
   }, [count]);
 
