@@ -7,7 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useEffect, useState } from "react";
 import useDocumentTitle from "../../hooks/useDocumentTitle";
 import { useFundStore } from "../../store/useCreateFund";
-import Loader from "../Loader/Loader";
+import ContinueButton from "../Button/ContinueButton";
 
 const schema = z.object({
   fName: z
@@ -71,6 +71,10 @@ const Fundraiser = () => {
       phone_number: data.phone,
       password: data.password,
     });
+
+    setTimeout(() => {
+      window.location.href = "/create/category";
+    }, 1000);
   };
 
   return (
@@ -78,7 +82,7 @@ const Fundraiser = () => {
       {/* Sidebar */}
       <Sidebar
         image="hello"
-        title="Let us know to you!"
+        title="Let us know who you are :)!"
         description="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium
           quis sequi provident, magnam illo ratione porro, nulla eius suscipit
           qui facilis. Nulla iure veritatis cupiditate atque quis modi
@@ -171,14 +175,9 @@ const Fundraiser = () => {
               </p>
             )}
 
+            {/* Button */}
             <div className="flex justify-end mt-14">
-              {loader ? (
-                <Loader />
-              ) : (
-                <button className="btn-bg w-60 rounded-lg text-white py-3 shadow shadow-zinc-900">
-                  Continue
-                </button>
-              )}
+              <ContinueButton loader={loader} />
             </div>
           </form>
         </div>

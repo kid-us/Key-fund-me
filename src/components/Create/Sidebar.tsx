@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { hello, logo } from "../../assets";
+import { category, hello, logo } from "../../assets";
 import Navbar from "../Navbar/Navbar";
 
 interface Props {
@@ -25,6 +25,9 @@ const Sidebar = ({ description, title, image }: Props) => {
             <div>
               {image === "hello" && (
                 <img src={hello} alt={hello} className="mb-7" />
+              )}
+              {image === "category" && (
+                <img src={category} alt={category} className="mb-7" />
               )}
             </div>
             <p className="text-3xl font-extrabold mb-5">{title}</p>
