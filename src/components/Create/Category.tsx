@@ -6,25 +6,23 @@ import categories from "../../services/categories";
 import ContinueButton from "../Button/ContinueButton";
 import BackButton from "../Button/BackButton";
 import Alert from "../Alert/Alert";
+import { useNavigate } from "react-router-dom";
+import useIncompleteFieldsAlert from "../../hooks/useAlert";
 
 const Category = () => {
+  const navigate = useNavigate();
+
   const { fundraise, addToFund } = useFundStore();
 
   const [category, setCategory] = useState<string>("");
   const [loader, setLoader] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
-  const [alert, setAlert] = useState<boolean>(false);
 
   //  Check if the previous form is filled
+  const alert = useIncompleteFieldsAlert("category");
+
   useEffect(() => {
-    if (
-      fundraise.first_name === undefined ||
-      fundraise.last_name === undefined ||
-      fundraise.phone_number === undefined ||
-      fundraise.password === undefined
-    ) {
-      setAlert(true);
-    }
+    setCategory(fundraise.category ? fundraise.category : "");
   }, [fundraise]);
 
   // Handle Continue
@@ -46,8 +44,8 @@ const Category = () => {
 
     // Redirect
     setTimeout(() => {
-      window.location.href = "/";
-    }, 1000);
+      navigate("/create/info");
+    }, 500);
   };
 
   return (
@@ -76,7 +74,12 @@ const Category = () => {
           <div className="grid lg:grid-cols-5 grid-cols-2 gap-3">
             {categories.map((c) => (
               <button
-                onClick={() => setCategory(c.name)}
+                onClick={() => {
+                  setCategory(c.name);
+                  addToFund({
+                    category: c.name,
+                  });
+                }}
                 key={c.id}
                 className={`${
                   category === c.name &&

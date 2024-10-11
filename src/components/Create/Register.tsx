@@ -74,7 +74,7 @@ const Fundraiser = () => {
 
     setTimeout(() => {
       window.location.href = "/create/category";
-    }, 1000);
+    }, 500);
   };
 
   return (
