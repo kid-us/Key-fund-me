@@ -10,7 +10,7 @@ interface CreateFund {
   campaign_description?: string;
   main_image?: string;
   other_image?: string;
-  target_amount?: string;
+  target_amount?: number;
   category?: string;
   government_issue_id?: string;
   photo?: string;

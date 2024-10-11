@@ -1,6 +1,5 @@
 import Sidebar from "./Sidebar";
 import Wrapper from "./Wrapper";
-
 import z from "zod";
 import { FieldValues, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -38,8 +37,6 @@ type FormData = z.infer<typeof schema>;
 const Fundraiser = () => {
   const [title] = useState("Register");
   useDocumentTitle(title);
-
-  //   Fund Store
 
   const [loader, setLoader] = useState<boolean>(false);
   const [passwordType, setPasswordType] = useState(true);
