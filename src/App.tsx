@@ -9,6 +9,7 @@ import Register from "./components/Create/Register";
 // import Category from "./components/Create/Category";
 import Category from "./components/Create/Category";
 import Info from "./components/Create/Info";
+import Media from "./components/Create/Media";
 
 function App() {
   return (
@@ -33,6 +34,11 @@ function App() {
         <Route
           path="/create/info"
           element={<Create component={Info} />}
+        ></Route>
+        {/* Media */}
+        <Route
+          path="create/media"
+          element={<Create component={Media} />}
         ></Route>
       </Routes>
     </>

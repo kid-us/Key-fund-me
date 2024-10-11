@@ -66,7 +66,7 @@ const Info = () => {
     });
 
     setTimeout(() => {
-      navigate("/create/category");
+      navigate("/create/media");
     }, 500);
   };
 

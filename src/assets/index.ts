@@ -4,5 +4,6 @@ import hero from "./hero.png";
 import info from "./info.png";
 import hello from "./greeting.png";
 import category from "./category.png";
+import picture from "./picture.png";
 
-export { bg, logo, hero, hello, category, info };
+export { bg, logo, hero, hello, category, info, picture };
