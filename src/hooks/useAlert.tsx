@@ -23,6 +23,16 @@ const useIncompleteFieldsAlert = (from: string) => {
     } else if (from === "info") {
       if (fundraise.category === undefined || fundraise.category === "")
         setAlert(true);
+    } else if (from === "info") {
+      if (
+        fundraise.campaign_title === undefined ||
+        fundraise.campaign_title === "" ||
+        fundraise.campaign_description === undefined ||
+        fundraise.campaign_description === "" ||
+        fundraise.target_amount === undefined
+      ) {
+        setAlert(true);
+      }
     }
   }, [from]);
 
