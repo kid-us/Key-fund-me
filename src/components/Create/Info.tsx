@@ -152,7 +152,7 @@ const Info = () => {
 
             {/* Button */}
             <div className="flex justify-between mt-14 lg:gap-x-0 gap-x-3">
-              <BackButton link="/create/register" />
+              <BackButton link="/category" />
               <ContinueButton loader={loader} />
             </div>
           </form>

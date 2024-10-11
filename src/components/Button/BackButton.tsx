@@ -8,7 +8,7 @@ const BackButton = ({ link }: Props) => {
 
   return (
     <button
-      onClick={() => navigate(link)}
+      onClick={() => navigate(`/create${link}`)}
       className="bg-neutral-900 w-60 rounded-lg text-white py-3 shadow shadow-zinc-900 text-center"
     >
       Back
