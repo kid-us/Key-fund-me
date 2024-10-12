@@ -10,6 +10,7 @@ import Register from "./components/Create/Register";
 import Category from "./components/Create/Category";
 import Info from "./components/Create/Info";
 import Media from "./components/Create/Media";
+import Verification from "./components/Create/Verification";
 
 function App() {
   return (
@@ -39,6 +40,11 @@ function App() {
         <Route
           path="create/media"
           element={<Create component={Media} />}
+        ></Route>
+        {/* Verification */}
+        <Route
+          path="create/verification"
+          element={<Create component={Verification} />}
         ></Route>
       </Routes>
     </>

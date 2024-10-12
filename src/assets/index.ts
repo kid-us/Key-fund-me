@@ -5,5 +5,7 @@ import info from "./info.png";
 import hello from "./greeting.png";
 import category from "./category.png";
 import picture from "./picture.png";
+import trust from "./trust.png";
+import bank from "./bank.png";
 
-export { bg, logo, hero, hello, category, info, picture };
+export { bg, logo, hero, hello, category, info, picture, bank, trust };

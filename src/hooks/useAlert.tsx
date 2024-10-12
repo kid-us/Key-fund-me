@@ -33,6 +33,24 @@ const useIncompleteFieldsAlert = (from: string) => {
       ) {
         setAlert(true);
       }
+    } else if (from === "media") {
+      if (
+        fundraise.main_image === undefined ||
+        fundraise.main_image === ""
+        // fundraise.photo === undefined ||
+        // fundraise.photo === ""
+      ) {
+        setAlert(true);
+      }
+    } else if (from === "verify") {
+      if (
+        fundraise.government_issue_id === undefined ||
+        fundraise.government_issue_id === "" ||
+        fundraise.photo === undefined ||
+        fundraise.photo === ""
+      ) {
+        setAlert(true);
+      }
     }
   }, [from]);
 
