@@ -1,0 +1,5 @@
+const baseUrl = "https://apiv2.zusebingo.com/api/v2";
+export default baseUrl;
+
+export const token =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyODcxMjM1NCwianRpIjoiOWE5YjQ2OGItN2VjYi00NTQ3LWFlYmUtZTdlMTZiOWMwNDVkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6NDEsIm5iZiI6MTcyODcxMjM1NCwiZXhwIjoxNzYwMzM0NzU0fQ.Wux9cN5y28vqZLiMYakL3HAxu7sQELkSTgIMh9ASIMQ";

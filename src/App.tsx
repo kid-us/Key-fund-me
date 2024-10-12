@@ -11,6 +11,7 @@ import Category from "./components/Create/Category";
 import Info from "./components/Create/Info";
 import Media from "./components/Create/Media";
 import Verification from "./components/Create/Verification";
+import Financial from "./components/Create/Financial";
 
 function App() {
   return (
@@ -45,6 +46,11 @@ function App() {
         <Route
           path="create/verification"
           element={<Create component={Verification} />}
+        ></Route>
+        {/* Finance */}
+        <Route
+          path="create/bank-info"
+          element={<Create component={Financial} />}
         ></Route>
       </Routes>
     </>

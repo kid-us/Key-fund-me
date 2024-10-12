@@ -24,6 +24,35 @@ const Verification = () => {
   const [photoBase64, setPhotoBase64] = useState<string | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
+  // Utility function to convert base64 to File
+  const base64ToFile = (base64String: string, fileName: string): File => {
+    const arr = base64String.split(",");
+    const mime = arr[0].match(/:(.*?);/)?.[1]; // Extract MIME type
+    const bstr = atob(arr[1]); // Decode base64 string
+    let n = bstr.length;
+    const u8arr = new Uint8Array(n);
+
+    while (n--) {
+      u8arr[n] = bstr.charCodeAt(n);
+    }
+
+    return new File([u8arr], fileName, { type: mime });
+  };
+
+  // Display image if users select before.
+  useEffect(() => {
+    setGovIDBase64(
+      fundraise.government_issue_id ? fundraise.government_issue_id : ""
+    );
+    setPhotoBase64(fundraise.photo ? fundraise.photo : "");
+
+    //   To File
+    fundraise.government_issue_id &&
+      setGovIDFile(base64ToFile(fundraise.government_issue_id, "main_img"));
+
+    fundraise.photo && setPhotoFile(base64ToFile(fundraise.photo, "photo"));
+  }, [fundraise]);
+
   // Validate that the selected file is an image and its size is less than 1 MB
   const validateImage = (file: File): boolean => {
     const validTypes = ["image/jpeg", "image/png", "image/jpg"];
@@ -33,35 +62,6 @@ const Verification = () => {
       setErrorMessage("Only JPEG or PNG files are allowed.");
       return false;
     }
-
-    // Utility function to convert base64 to File
-    const base64ToFile = (base64String: string, fileName: string): File => {
-      const arr = base64String.split(",");
-      const mime = arr[0].match(/:(.*?);/)?.[1]; // Extract MIME type
-      const bstr = atob(arr[1]); // Decode base64 string
-      let n = bstr.length;
-      const u8arr = new Uint8Array(n);
-
-      while (n--) {
-        u8arr[n] = bstr.charCodeAt(n);
-      }
-
-      return new File([u8arr], fileName, { type: mime });
-    };
-
-    // Display image if users select before.
-    useEffect(() => {
-      setGovIDBase64(
-        fundraise.government_issue_id ? fundraise.government_issue_id : ""
-      );
-      setPhotoBase64(fundraise.photo ? fundraise.photo : "");
-
-      //   To File
-      fundraise.government_issue_id &&
-        setGovIDFile(base64ToFile(fundraise.government_issue_id, "main_img"));
-
-      fundraise.photo && setPhotoFile(base64ToFile(fundraise.photo, "photo"));
-    }, [fundraise]);
 
     if (file.size > MAX_FILE_SIZE) {
       setErrorMessage("File size should be less than 1MB.");
@@ -120,7 +120,7 @@ const Verification = () => {
         addToFund({ government_issue_id: govIDBase64 });
         addToFund({ photo: photoBase64 });
 
-        navigate("/next-step"); // Change this route to the next step
+        navigate("/create/bank-info"); // Change this route to the next step
       } catch (error) {
         console.error("Error converting file:", error);
         setErrorMessage("Error processing files.");
@@ -238,7 +238,11 @@ const Verification = () => {
               )}
             </div>
 
-            {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
+            {errorMessage && (
+              <p style={{ color: "red" }} className="text-sm mt-3">
+                {errorMessage}
+              </p>
+            )}
 
             <div className="flex justify-between mt-14 lg:gap-x-0 gap-x-3">
               <BackButton link="/media" />
