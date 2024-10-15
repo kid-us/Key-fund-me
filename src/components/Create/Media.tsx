@@ -182,6 +182,7 @@ const Media = () => {
         image="picture"
         title="Add a cover Photo"
         page={4}
+        progress={64.6}
         description="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quis sequi provident, magnam illo ratione porro, nulla eius suscipit qui facilis. Nulla iure veritatis cupiditate atque quis modi necessitatibus."
       />
 
@@ -194,7 +195,7 @@ const Media = () => {
           {/* Main Image */}
           {croppedImage ? (
             <div className="relative">
-              <div className="border rounded-xl overflow-hidden mt-5 shadow">
+              <div className="border rounded-xl overflow-hidden mt-5 shadow-lg">
                 <img
                   src={croppedImage}
                   alt="Image"
@@ -202,7 +203,7 @@ const Media = () => {
                 />
               </div>
               {/* Close Btn */}
-              <div className="absolute -top-3 right-0">
+              <div className="absolute -top-1 right-0">
                 <button
                   onClick={() => {
                     addToFund({

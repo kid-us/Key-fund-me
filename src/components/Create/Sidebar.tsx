@@ -15,9 +15,10 @@ interface Props {
   title: string;
   description: string;
   page: number;
+  progress: number;
 }
 
-const Sidebar = ({ description, title, image, page }: Props) => {
+const Sidebar = ({ description, title, image, page, progress }: Props) => {
   return (
     <>
       {/* Small device Navbar */}
@@ -66,6 +67,16 @@ const Sidebar = ({ description, title, image, page }: Props) => {
         {/* Pagination */}
         <div className="relative">
           <p className="absolute bottom-10">{page} of 6</p>
+
+          <div
+            className="absolute bottom-11 right-0
+           w-52 h-2 bg-gray-200 rounded-full overflow-hidden"
+          >
+            <div
+              className="bg-green-500 h-full"
+              style={{ width: `${progress}%` }}
+            ></div>
+          </div>
         </div>
       </div>
     </>

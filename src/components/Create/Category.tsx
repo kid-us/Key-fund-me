@@ -58,6 +58,7 @@ const Category = () => {
         image="category"
         title="Tell us the Category"
         page={2}
+        progress={32.6}
         description="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium
           quis sequi provident, magnam illo ratione porro, nulla eius suscipit
           qui facilis. Nulla iure veritatis cupiditate atque quis modi

@@ -81,6 +81,7 @@ const Fundraiser = () => {
         image="hello"
         title="Let us know who you are :)"
         page={1}
+        progress={16.6}
         description="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium
           quis sequi provident, magnam illo ratione porro, nulla eius suscipit
           qui facilis. Nulla iure veritatis cupiditate atque quis modi

@@ -80,6 +80,7 @@ const Info = () => {
         image="info"
         title="Tell us about the Fundraising"
         page={3}
+        progress={48.6}
         description="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium
     quis sequi provident, magnam illo ratione porro, nulla eius suscipit
     qui facilis. Nulla iure veritatis cupiditate atque quis modi

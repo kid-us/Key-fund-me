@@ -77,6 +77,7 @@ const Financial = () => {
         image="bank"
         title="Bank Informations"
         page={6}
+        progress={100}
         description="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quis sequi provident, magnam illo ratione porro, nulla eius suscipit qui facilis. Nulla iure veritatis cupiditate atque quis modi necessitatibus."
       />
 
