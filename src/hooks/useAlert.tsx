@@ -23,7 +23,7 @@ const useIncompleteFieldsAlert = (from: string) => {
     } else if (from === "info") {
       if (fundraise.category === undefined || fundraise.category === "")
         setAlert(true);
-    } else if (from === "info") {
+    } else if (from === "media") {
       if (
         fundraise.campaign_title === undefined ||
         fundraise.campaign_title === "" ||
@@ -33,7 +33,7 @@ const useIncompleteFieldsAlert = (from: string) => {
       ) {
         setAlert(true);
       }
-    } else if (from === "media") {
+    } else if (from === "verify") {
       if (
         fundraise.main_image === undefined ||
         fundraise.main_image === ""
@@ -42,7 +42,7 @@ const useIncompleteFieldsAlert = (from: string) => {
       ) {
         setAlert(true);
       }
-    } else if (from === "verify") {
+    } else if (from === "finance") {
       if (
         fundraise.government_issue_id === undefined ||
         fundraise.government_issue_id === "" ||

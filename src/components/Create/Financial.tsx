@@ -33,7 +33,8 @@ const Financial = () => {
   useDocumentTitle(title);
 
   //  Check if the previous form is filled
-  const alert = useIncompleteFieldsAlert("verify");
+  const alert = useIncompleteFieldsAlert("finance");
+
   const [loader, setLoader] = useState<boolean>(false);
   const [bank, setBank] = useState<Bank[]>([]);
   const [bankCode, setBankCode] = useState<string>("130");
