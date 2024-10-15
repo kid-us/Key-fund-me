@@ -161,7 +161,7 @@ const Verification = () => {
                   src={govIDBase64}
                   alt="Government Issued ID Preview"
                   style={{ maxWidth: "400px", marginTop: "10px" }}
-                  className="border rounded-xl mb-5 h-48"
+                  className="border border-black rounded mb-5 h-48"
                 />
                 {/* Close btn */}
                 <button
@@ -207,7 +207,7 @@ const Verification = () => {
                     src={photoBase64}
                     alt="Photo"
                     style={{ maxWidth: "200px", marginTop: "10px" }}
-                    className="border rounded-xl mb-10 h-36"
+                    className="border border-black rounded mb-10 h-36"
                   />
                   {/* Close btn */}
                   <button
