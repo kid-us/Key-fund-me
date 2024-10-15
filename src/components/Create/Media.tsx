@@ -190,12 +190,12 @@ const Media = () => {
       <Wrapper>
         <div className="w-full">
           <p className="text-xl">Upload Images</p>
-          <p className="mt-2 text-sm text-gray-600">Main Image</p>
+          <p className="mt-2 text-sm text-gray-600 mb-2">Main Image</p>
 
           {/* Main Image */}
           {croppedImage ? (
             <div className="relative">
-              <div className="border rounded-xl overflow-hidden mt-5 shadow-lg">
+              <div className="border border-black rounded overflow-hidden mt-5 shadow">
                 <img
                   src={croppedImage}
                   alt="Image"
@@ -203,7 +203,7 @@ const Media = () => {
                 />
               </div>
               {/* Close Btn */}
-              <div className="absolute -top-1 right-0">
+              <div className="absolute -top-0 right-1">
                 <button
                   onClick={() => {
                     addToFund({
@@ -247,7 +247,7 @@ const Media = () => {
           {/* Other Image */}
           {otherCroppedImage ? (
             <div className="relative w-[30%]">
-              <div className="border rounded-xl overflow-hidden mt-5 shadow">
+              <div className="border border-black rounded overflow-hidden mt-5 shadow">
                 <img
                   src={otherCroppedImage}
                   alt="Image"
