@@ -11,6 +11,7 @@ import useDocumentTitle from "../../hooks/useDocumentTitle";
 import useIncompleteFieldsAlert from "../../hooks/useAlert";
 import axios from "axios";
 import baseUrl from "../../services/request";
+import { useNavigate } from "react-router-dom";
 
 interface Bank {
   name: string;
@@ -18,15 +19,13 @@ interface Bank {
 }
 
 const schema = z.object({
-  bank_name: z.string().min(2, {
-    message: "Bank required.",
-  }),
   account_number: z.string().min(6, { message: "Account number is required." }),
 });
 
 type FormData = z.infer<typeof schema>;
 
 const Financial = () => {
+  const navigate = useNavigate();
   const token =
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyODcxMjM1NCwianRpIjoiOWE5YjQ2OGItN2VjYi00NTQ3LWFlYmUtZTdlMTZiOWMwNDVkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6NDEsIm5iZiI6MTcyODcxMjM1NCwiZXhwIjoxNzYwMzM0NzU0fQ.Wux9cN5y28vqZLiMYakL3HAxu7sQELkSTgIMh9ASIMQ";
 
@@ -66,6 +65,7 @@ const Financial = () => {
   const onSubmit = (data: FieldValues) => {
     console.log(bankCode, data);
     setLoader(true);
+    navigate("/verify");
   };
 
   return (
@@ -76,6 +76,7 @@ const Financial = () => {
       <Sidebar
         image="bank"
         title="Bank Informations"
+        page={6}
         description="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quis sequi provident, magnam illo ratione porro, nulla eius suscipit qui facilis. Nulla iure veritatis cupiditate atque quis modi necessitatibus."
       />
 
@@ -86,13 +87,16 @@ const Financial = () => {
           <form onSubmit={handleSubmit(onSubmit)}>
             {/* Account Number */}
             <div className="mb-5">
-              <label htmlFor="number" className="text-gray-600 block text-sm">
+              <label
+                htmlFor="account_number"
+                className="text-gray-600 block text-sm"
+              >
                 Account Number
               </label>
               <input
                 {...register("account_number")}
                 type="text"
-                name="number"
+                name="account_number"
                 className={`focus:outline-none ps-3 placeholder:text-gray-400 w-full h-12 rounded-lg shadow border border-gray-400 mt-1`}
                 placeholder="Bank account Number / Phone Number"
               />

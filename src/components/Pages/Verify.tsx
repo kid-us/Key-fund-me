@@ -4,12 +4,12 @@ import React, {
   ChangeEvent,
   FormEvent,
   KeyboardEvent,
-  useEffect,
+  // useEffect,
 } from "react";
 import { hero, logo } from "../../assets";
 // import axios from "axios";
 // import { baseUrl } from "../../services/apiClient";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import useDocumentTitle from "../../hooks/useDocumentTitle";
 // import useDocumentTitle from "../../hooks/useDocumentTittle";
 
@@ -17,18 +17,18 @@ const Verify: React.FC = () => {
   const [title] = useState("Verify Phone Number");
   useDocumentTitle(title);
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const phoneNo = searchParams.get("phone");
   const [verifyError, setVerifyError] = useState<boolean>(false);
 
-  useEffect(() => {
-    if (!phoneNo) {
-      navigate("/register");
-    }
-  }, [phoneNo]);
+  // useEffect(() => {
+  //   if (!phoneNo) {
+  //     navigate("/register");
+  //   }
+  // }, [phoneNo]);
 
   const [code, setCode] = useState<string[]>(["", "", "", "", "", ""]);
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
@@ -98,7 +98,9 @@ const Verify: React.FC = () => {
       <div className="container mx-auto flex justify-center items-center h-[100dvh] pt-24 lg:px-0 px-2">
         <div className="lg:w-[38%] w-full bg-white rounded-2xl p-8">
           <div className="flex justify-center">
-            <img src={logo} alt="Logo" className="w-28" />
+            <Link to="/">
+              <img src={logo} alt="Logo" className="w-28" />
+            </Link>
           </div>
           <form className="mt-10" onSubmit={handleSubmit}>
             <h1 className="text-2xl">Verify Phone Number</h1>

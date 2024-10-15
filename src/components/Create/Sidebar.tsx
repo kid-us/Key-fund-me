@@ -14,9 +14,10 @@ interface Props {
   image: string;
   title: string;
   description: string;
+  page: number;
 }
 
-const Sidebar = ({ description, title, image }: Props) => {
+const Sidebar = ({ description, title, image, page }: Props) => {
   return (
     <>
       {/* Small device Navbar */}
@@ -28,6 +29,7 @@ const Sidebar = ({ description, title, image }: Props) => {
         <Link to="/" className="lg:block hidden">
           <img src={logo} alt="Logo" className="absolute top-20 w-24" />
         </Link>
+
         <div className="flex items-center h-full">
           <div>
             <div>
@@ -59,6 +61,11 @@ const Sidebar = ({ description, title, image }: Props) => {
             <p className="text-3xl font-extrabold mb-5">{title}</p>
             <p className="text-gray-800">{description}</p>
           </div>
+        </div>
+
+        {/* Pagination */}
+        <div className="relative">
+          <p className="absolute bottom-10">{page} of 6</p>
         </div>
       </div>
     </>

@@ -78,7 +78,8 @@ const Info = () => {
       {/* Sidebar */}
       <Sidebar
         image="info"
-        title="Tell us about the Fundraiser"
+        title="Tell us about the Fundraising"
+        page={3}
         description="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium
     quis sequi provident, magnam illo ratione porro, nulla eius suscipit
     qui facilis. Nulla iure veritatis cupiditate atque quis modi

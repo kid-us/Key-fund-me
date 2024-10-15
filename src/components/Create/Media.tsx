@@ -180,7 +180,8 @@ const Media = () => {
       {/* Sidebar */}
       <Sidebar
         image="picture"
-        title="Add a cover photo or video"
+        title="Add a cover Photo"
+        page={4}
         description="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quis sequi provident, magnam illo ratione porro, nulla eius suscipit qui facilis. Nulla iure veritatis cupiditate atque quis modi necessitatibus."
       />
 
