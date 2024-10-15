@@ -73,7 +73,7 @@ const Login = () => {
             <label htmlFor="email" className="block text-sm mt-3 text-gray-600">
               Password
             </label>
-            <div className="grid grid-cols-12 border border-gray-400 rounded-lg mt-2">
+            <div className="grid grid-cols-12 border border-gray-400 rounded-lg mt-2 overflow-hidden">
               <div className="col-span-11">
                 <input
                   {...register("password")}

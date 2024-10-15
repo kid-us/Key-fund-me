@@ -48,7 +48,7 @@ const Navbar = ({ bg }: Props) => {
         {/* Large device Nav */}
         <div className="lg:block hidden mt-7 space-x-14">
           <Link
-            to={"/"}
+            to={"/sign-in"}
             className="border border-zinc-400 rounded-lg px-5 py-1 text-sm"
           >
             Sign In
