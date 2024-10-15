@@ -62,7 +62,7 @@ const Media = () => {
 
     fundraise.other_image &&
       setOtherImgFile(base64ToFile(fundraise.other_image, "other_image"));
-  }, [fundraise]);
+  }, []);
 
   // Input Ref
   const inputRef = useRef<HTMLInputElement>(null);
@@ -157,6 +157,30 @@ const Media = () => {
     };
   };
 
+  // On Reset Image
+
+  const handleRestImage = (name: string) => {
+    // Main
+    if (name === "main") {
+      addToFund({
+        main_image: "",
+      });
+      setCroppedImage(null);
+      // setImageSrc(null);
+      return;
+    }
+
+    // Other
+    if (name === "other") {
+      addToFund({
+        other_image: "",
+      });
+      setOtherCroppedImage(null);
+      // setImageSrc(null);
+      return;
+    }
+  };
+
   // On Submit
   const handleSubmit = () => {
     if (!imgFile) {
@@ -205,13 +229,7 @@ const Media = () => {
               {/* Close Btn */}
               <div className="absolute -top-0 right-1">
                 <button
-                  onClick={() => {
-                    addToFund({
-                      main_image: "",
-                    });
-                    setCroppedImage(null);
-                    setImageSrc(null);
-                  }}
+                  onClick={() => handleRestImage("main")}
                   className="bg-red-500 rounded text-xs px-2 py-1 text-white bi-x-lg"
                 ></button>
               </div>
@@ -257,13 +275,7 @@ const Media = () => {
               {/* Close Btn */}
               <div className="absolute -top-3 right-0">
                 <button
-                  onClick={() => {
-                    addToFund({
-                      other_image: "",
-                    });
-                    setOtherCroppedImage(null);
-                    setImageSrc(null);
-                  }}
+                  onClick={() => handleRestImage("other")}
                   className="bg-red-500 rounded text-xs px-2 py-1 text-white bi-x-lg"
                 ></button>
               </div>
