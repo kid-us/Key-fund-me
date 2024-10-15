@@ -4,7 +4,7 @@ interface ParentProps {
 
 const Create = ({ component: Component }: ParentProps) => {
   return (
-    <div className="bg-gray-100 h-[100dvh]">
+    <div className="bg-amber-100/30 h-[100dvh]">
       <div className="lg:grid grid-cols-9 gap-x-10">
         <Component />
       </div>
