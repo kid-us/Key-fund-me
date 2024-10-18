@@ -24,12 +24,12 @@ const Fundrasings = () => {
         </select>
 
         <div className="lg:space-x-3 space-x-2 col-span-2">
-          <button className="border border-gray-300 rounded-lg active:text-white active:bg-green-600 hover:bg-gray-100 h-11 w-10 bi-arrow-left"></button>
-          <button className="border border-gray-300 rounded-lg active:text-white active:bg-green-600 hover:bg-gray-100 h-11 w-10 bi-arrow-right"></button>
+          <button className="border border-violet-500 rounded-lg active:text-white active:bg-green-600 hover:bg-gray-100 h-11 w-10 bi-arrow-left"></button>
+          <button className="border border-violet-500 rounded-lg active:text-white active:bg-green-600 hover:bg-gray-100 h-11 w-10 bi-arrow-right"></button>
         </div>
       </div>
 
-      <div className="grid lg:grid-cols-3 gap-6 mt-10">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-6 mt-10">
         {funds.map((f) => (
           <Link
             to={"/help"}
@@ -49,12 +49,12 @@ const Fundrasings = () => {
            w-full h-2 bg-gray-200 rounded-full overflow-hidden"
                 >
                   <div
-                    className="bg-green-500 h-full"
+                    className="bg-violet-500 h-full"
                     style={{ width: `69%` }}
                   ></div>
                 </div>
               </div>
-              <p className="mt-5">10.5k birr raised.</p>
+              <p className="mt-6 text-sm">10.5k birr raised.</p>
             </div>
           </Link>
         ))}

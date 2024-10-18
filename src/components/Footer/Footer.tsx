@@ -73,14 +73,14 @@ const Footer = () => {
 
           {/* Category */}
           <div>
-            <p className="lg:col-span-2 font-bold mb-4 lg:text-lg text-gray-500">
+            <p className="lg:col-span-2  mb-4 lg:text-lg text-gray-500">
               Category
             </p>
             {categories.map((c) => (
               <Link
                 key={c.id}
                 to={`${c.path}`}
-                className="block font-bold mb-2 lg:text-md text-sm overflow-hidden hover:text-gray-500"
+                className="block  mb-2 lg:text-md text-sm overflow-hidden hover:text-gray-500"
               >
                 {c.name}
               </Link>
@@ -89,12 +89,12 @@ const Footer = () => {
 
           {/* About */}
           <div>
-            <p className="font-bold mb-4 lg:text-lg text-gray-500">About</p>
+            <p className=" mb-4 lg:text-lg text-gray-500">About</p>
             {items.map((nav) => (
               <Link
                 key={nav.id}
                 to={`${nav.path}`}
-                className="block font-bold mb-2 lg:text-md text-sm overflow-hidden hover:text-gray-500"
+                className="block  mb-2 lg:text-md text-sm overflow-hidden hover:text-gray-500"
               >
                 {nav.name}
               </Link>
@@ -103,12 +103,12 @@ const Footer = () => {
 
           {/* Explore */}
           <div className="lg:mt-0 mt-5">
-            <p className="font-bold mb-4 lg:text-lg text-gray-500">Explore</p>
+            <p className=" mb-4 lg:text-lg text-gray-500">Explore</p>
             {nav.map((nav) => (
               <Link
                 key={nav.id}
                 to={`${nav.path}`}
-                className="block font-bold mb-2 lg:text-md text-sm overflow-hidden hover:text-gray-500"
+                className="block  mb-2 lg:text-md text-sm overflow-hidden hover:text-gray-500"
               >
                 {nav.name}
               </Link>
@@ -117,7 +117,7 @@ const Footer = () => {
 
           {/* Social */}
           <div className="lg:mt-0 mt-5">
-            <p className="font-bold mb-4 lg:text-lg text-gray-500">Social</p>
+            <p className="mb-4 lg:text-lg text-gray-500">Social</p>
             <div className="flex gap-x-10">
               <Link to={"/"} className="bi-telegram text-lg text-cyan-500" />
               <Link to={"/"} className="bi-instagram text-lg text-pink-600" />
