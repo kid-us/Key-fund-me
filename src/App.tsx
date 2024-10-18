@@ -12,6 +12,7 @@ import Info from "./components/Create/Info";
 import Media from "./components/Create/Media";
 import Verification from "./components/Create/Verification";
 import Financial from "./components/Create/Financial";
+import Detail from "./components/Pages/Detail";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/" element={<Home />}></Route>
         <Route path="/sign-in" element={<Login />}></Route>
         <Route path="/verify" element={<Verify />}></Route>
+        <Route path="/help" element={<Detail />}></Route>
 
         {/* Create */}
         {/* Register */}
