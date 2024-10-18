@@ -64,10 +64,11 @@ const Sidebar = ({ description, title, image, page, progress }: Props) => {
           </div>
         </div>
 
-        {/* Pagination */}
         <div className="relative">
+          {/* Pagination */}
           <p className="absolute bottom-10">{page} of 6</p>
-
+          
+          {/* Progress */}
           <div
             className="absolute bottom-11 right-0
            w-52 h-2 bg-gray-200 rounded-full overflow-hidden"
