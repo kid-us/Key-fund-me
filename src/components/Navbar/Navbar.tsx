@@ -32,9 +32,9 @@ const Navbar = ({ bg, sticky }: Props) => {
       } top-0 z-10 container mx-auto lg:px-5 rounded-b-xl lg:pb-4 pt-1 py-1 pb-3 bg-white`}
     >
       <div className="flex justify-between lg:p-0 px-5 py-1">
-        <div className="">
+        <Link to="/">
           <img src={logo} alt="Logo" className="lg:w-28 w-24" />
-        </div>
+        </Link>
 
         {/* Large device Nav */}
         <div className="lg:block hidden space-x-16 mt-7">
