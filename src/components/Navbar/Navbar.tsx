@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { logo } from "../../assets";
+import { logo, logo2 } from "../../assets";
 import nav from "../../services/nav";
 import { useState } from "react";
 import Menu from "./Menu";
@@ -29,11 +29,12 @@ const Navbar = ({ bg, sticky }: Props) => {
     <div
       className={`${bg && "bg-white"} ${
         !sticky && "sticky"
-      } top-0 z-10 container mx-auto lg:px-5 rounded-b-xl lg:pb-4 pt-1 py-1 pb-3 bg-white`}
+      } top-0 z-10 container mx-auto lg:px-5 rounded-b-xl lg:pb-4 lg:pt-2 pt-1 py-1 pb-3 bg-white`}
     >
       <div className="flex justify-between lg:p-0 px-5 py-1">
         <Link to="/">
-          <img src={logo} alt="Logo" className="lg:w-28 w-24" />
+          <img src={logo} alt="Logo" className="lg:block hidden w-20" />
+          <img src={logo2} alt="Logo" className="lg:hidden block w-10" />
         </Link>
 
         {/* Large device Nav */}
