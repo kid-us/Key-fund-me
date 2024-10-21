@@ -12,7 +12,7 @@ const Button = ({ loader, onClick }: Props) => {
       ) : (
         <button
           onClick={onClick}
-          className="btn-bg w-60 rounded-lg text-white py-3 shadow shadow-zinc-900"
+          className="bg-primary w-60 rounded-lg text-white py-3 shadow shadow-zinc-900"
         >
           Continue
         </button>

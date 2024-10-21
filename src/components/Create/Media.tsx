@@ -366,7 +366,7 @@ const Media = () => {
             <div className="absolute z-50 -bottom-12 grid grid-cols-12 gap-x-1 w-full">
               <button
                 onClick={() => setRotation((rotation + 90) % 360)}
-                className=" col-span-2 text-white bi-arrow-repeat text-2xl btn-bg border rounded-l-lg"
+                className=" col-span-2 text-white bi-arrow-repeat text-2xl bg-primary border rounded-l-lg"
               ></button>
 
               <div className="w-full col-span-8 bg-white px-2">
@@ -380,7 +380,7 @@ const Media = () => {
               </div>
               <button
                 onClick={() => showCroppedImage()}
-                className="text-white col-span-2 btn-bg rounded-r-lg border"
+                className="text-white col-span-2 bg-primary rounded-r-lg border"
               >
                 Save
               </button>

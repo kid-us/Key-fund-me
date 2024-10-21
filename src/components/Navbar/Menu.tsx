@@ -37,7 +37,7 @@ const Menu = ({ menu }: Props) => {
           </p>
         </Link>
         <Link to={"/"}>
-          <p className="btn-bg text-white text-sm shadow shadow-zinc-900 py-3 text-center rounded-lg w-full">
+          <p className="bg-primary text-white text-sm shadow shadow-zinc-900 py-3 text-center rounded-lg w-full">
             Start a KeyFundMe
           </p>
         </Link>

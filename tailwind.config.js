@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        "primary-bg": "#00a651", // Wrap color values in quotes
-        "secondary-bg": "#00adee", // Wrap color values in quotes
+        primary: "#00a651", // Wrap color values in quotes
+        secondary: "#00adee", // Wrap color values in quotes
       },
     },
   },

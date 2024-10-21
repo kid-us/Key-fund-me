@@ -9,7 +9,7 @@ const Hero = () => {
           Giving Hope, Changing Lives Globally
         </p>
         <Link to={"/create/register"} className="flex justify-center">
-          <p className="text-center btn-bg text-white rounded-lg py-3 px-10">
+          <p className="text-center bg-primary text-white rounded-lg py-3 px-10">
             Start KeyFundMe
           </p>
         </Link>

@@ -135,11 +135,11 @@ const Verify: React.FC = () => {
             <div className="mt-10 text-center">
               {allInputsFilled &&
                 (loader ? (
-                  <p className="py-3 text-white btn-bg w-full rounded flex justify-center font-poppins text-lg shadow shadow-zinc-950">
+                  <p className="py-3 text-white bg-primary w-full rounded flex justify-center font-poppins text-lg shadow shadow-zinc-950">
                     <span className="loader rounded"></span>
                   </p>
                 ) : (
-                  <button className="py-3 text-white btn-bg w-full rounded font-poppins text-lg shadow shadow-zinc-950">
+                  <button className="py-3 text-white bg-primary w-full rounded font-poppins text-lg shadow shadow-zinc-950">
                     Verify
                   </button>
                 ))}
