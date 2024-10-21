@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
 
 :root {
-  --primary-bg: #088908;
-  /* 0A9A0A */
+  --primary-bg: #00a651;
+  --secondary-bg: #00adee;
 }
 
 body {
@@ -15,8 +15,12 @@ body {
   background-color: var(--primary-bg);
 }
 
-.btn-bg {
+.bg-primary {
   background-color: var(--primary-bg);
+}
+
+.bg-secondary {
+  background-color: var(--secondary-bg);
 }
 
 /* Loader */
@@ -27,6 +31,7 @@ body {
   background: var(--c) 0% 50%, var(--c) 50% 50%, var(--c) 100% 50%;
   animation: l7 1s infinite linear alternate;
 }
+
 @keyframes l7 {
   0% {
     background-size: 20% 50%, 20% 50%, 20% 50%;
