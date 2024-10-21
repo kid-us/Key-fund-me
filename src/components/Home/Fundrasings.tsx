@@ -49,7 +49,7 @@ const Fundrasings = () => {
            w-full h-2 bg-gray-200 rounded-full overflow-hidden"
                 >
                   <div
-                    className="bg-violet-500 h-full"
+                    className="bg-secondary h-full"
                     style={{ width: `69%` }}
                   ></div>
                 </div>

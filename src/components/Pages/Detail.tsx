@@ -32,7 +32,7 @@ const Detail = () => {
               <div className="relative mt-3">
                 <div className="absolute w-full h-3 bg-gray-200 rounded-full overflow-hidden">
                   <div
-                    className="bg-violet-500 h-full"
+                    className="bg-secondary h-full"
                     style={{ width: `69%` }}
                   ></div>
                 </div>
@@ -40,11 +40,11 @@ const Detail = () => {
 
               <p className="mt-9 text-sm text-gray-600">1.3K donations</p>
 
-              <button className="w-full bg-violet-700 text-white h-12 rounded-lg shadow mt-3">
+              <button className="w-full bg-secondary text-white h-12 rounded-lg shadow mt-3">
                 Share
               </button>
 
-              <button className="w-full bg-violet-700 text-white h-12 rounded-lg shadow mt-3">
+              <button className="w-full bg-secondary text-white h-12 rounded-lg shadow mt-3">
                 Donate Now
               </button>
             </div>
@@ -126,11 +126,11 @@ const Detail = () => {
                 </div>
               </div>
 
-              <button className="w-full bg-violet-700 text-white h-12 rounded-lg shadow mt-5">
+              <button className="w-full bg-secondary text-white h-12 rounded-lg shadow mt-5">
                 Share
               </button>
 
-              <button className="w-full bg-violet-700 text-white h-12 rounded-lg shadow mt-3">
+              <button className="w-full bg-secondary text-white h-12 rounded-lg shadow mt-3">
                 Donate Now
               </button>
             </div>
