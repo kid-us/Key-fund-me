@@ -24,6 +24,11 @@ const items: Footer[] = [
     name: "Privacy Policy",
     path: "/privacy-policy",
   },
+  {
+    id: 4,
+    name: "Terms and Conditions",
+    path: "/terms",
+  },
 ];
 
 const categories: Footer[] = [

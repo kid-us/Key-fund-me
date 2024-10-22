@@ -13,47 +13,45 @@ import Media from "./components/Create/Media";
 import Verification from "./components/Create/Verification";
 import Financial from "./components/Create/Financial";
 import Detail from "./components/Pages/Detail";
+import Terms from "./components/Pages/Terms";
 
 function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/sign-in" element={<Login />}></Route>
-        <Route path="/verify" element={<Verify />}></Route>
-        <Route path="/help" element={<Detail />}></Route>
+        <Route path="/" element={<Home />} />
+        <Route path="/sign-in" element={<Login />} />
+        <Route path="/verify" element={<Verify />} />
+        <Route path="/help" element={<Detail />} />
 
         {/* Create */}
         {/* Register */}
         <Route
           path="/create/register"
           element={<Create component={Register} />}
-        ></Route>
+        />
         {/* Category */}
         <Route
           path="/create/category"
           element={<Create component={Category} />}
-        ></Route>
+        />
         {/* Fundraising Info */}
-        <Route
-          path="/create/info"
-          element={<Create component={Info} />}
-        ></Route>
+        <Route path="/create/info" element={<Create component={Info} />} />
         {/* Media */}
-        <Route
-          path="create/media"
-          element={<Create component={Media} />}
-        ></Route>
+        <Route path="create/media" element={<Create component={Media} />} />
         {/* Verification */}
         <Route
           path="create/verification"
           element={<Create component={Verification} />}
-        ></Route>
+        />
         {/* Finance */}
         <Route
           path="create/bank-info"
           element={<Create component={Financial} />}
-        ></Route>
+        />
+
+        {/*  */}
+        <Route path="/terms" element={<Terms />} />
       </Routes>
     </>
   );
