@@ -14,6 +14,7 @@ import Verification from "./components/Create/Verification";
 import Financial from "./components/Create/Financial";
 import Detail from "./components/Pages/Detail";
 import Terms from "./components/Pages/Terms";
+import PrivacyPolicy from "./components/Pages/PrivacyPolicy";
 
 function App() {
   return (
@@ -52,6 +53,7 @@ function App() {
 
         {/*  */}
         <Route path="/terms" element={<Terms />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       </Routes>
     </>
   );
